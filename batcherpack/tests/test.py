@@ -29,6 +29,14 @@ class TestBatcher(unittest.TestCase):
         response = batcher(self.records1)
         self.assertEqual(len(response[2]), 1, "Should be 1")
 
+    def test_utf1(self):
+        response = batcher([u'\u0041\u0041\u0041\u0041\u0041', u'\u0041\u0041'])
+        self.assertEqual(len(response), 1, "Should be 1")
+
+    def test_utf2(self):
+        response = batcher([u'\u03c0\u03c0\u03c0\u03c0\u03c0', u'\u03c0\u03c0'])
+        self.assertEqual(len(response), 2, "Should be 2")
+
     def test_sanity(self):
         self.assertEqual(addnumbers(4, 2), 6, "Should be 6")
 

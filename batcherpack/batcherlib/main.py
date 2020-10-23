@@ -17,9 +17,9 @@ def batcher(records):
     output_records = []
 
     for input_record in records:        
-        if len(input_record) <= MAX_RECORD_SIZE: #UTF8?
+        if len(input_record) <= MAX_RECORD_SIZE: 
             print(f"C: {input_record}")
-            batch_size += len(input_record)
+            batch_size += len(input_record.encode('utf-8'))
             if batch_size > MAX_BATCH_SIZE:
                 print(f"A: {batch_size}")
                 print(f"A: {output_records}")
@@ -32,8 +32,8 @@ def batcher(records):
                 output_records.append(input_record)
                 print(f"B: {output_records}")   
         else:
-            print("Skipping, too large")
-            
+            print(f"Skipping, too large, length: {len(input_record.encode('utf-8'))}, {input_record}")
+
     if output_records:
         batches.append(output_records)
 
