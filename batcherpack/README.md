@@ -12,5 +12,12 @@ Output is: [<batch1>, <batch2>, ..., <batchn>] where each batch is an array of r
 
 The records are assumed to be strings of variable length and they pass intact through the system and records stays in the order that they arrive.
 
-# To build a library and push to test Pypi:
+## To build a library and push to test Pypi:
 
+python3 setup.py sdist bdist_wheel
+
+python3 -m twine upload --repository testpypi dist/*
+
+## To install
+
+pip3 install -i https://test.pypi.org/simple/ batcher==0.0.2

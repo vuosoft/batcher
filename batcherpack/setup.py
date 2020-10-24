@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="batcher", 
-    version="0.0.1",
+    version="0.0.2",
     author="Tero Vaalavuo",
     author_email="tero.vaalavuo@gmail.com",
     description="A utility tool to pack arrays of records to batches",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/vuosoft/utils",
+    url="https://github.com/vuosoft/batcher",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
